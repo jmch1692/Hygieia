@@ -1,0 +1,11 @@
+name: Scan secrets
+
+on: [push, pull_request]
+
+jobs:
+  scanning:
+    name: secret scan
+    runs-on: ubuntu-latest
+    steps:
+    - name: Trufflehog Actions Scan
+      uses: edplato/trufflehog-actions-scan@v0.9i-beta
