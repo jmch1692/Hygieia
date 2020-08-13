@@ -1,14 +1,11 @@
-name: GitGuardian scan
+name: Scan secrets
 
 on: [push, pull_request]
 
 jobs:
   scanning:
-    name: GitGuardian scan
+    name: secret scan
     runs-on: ubuntu-latest
     steps:
-    - name: Trufflehog Check
-      uses: UnicornGlobal/trufflehog-actions-scan@v1.0.0
-      with:
-        # Branch to run the check on
-        branch: jmch1692-patch-1
+    - name: Trufflehog Actions Scan
+      uses: edplato/trufflehog-actions-scan@v0.9i-beta
